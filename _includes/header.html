@@ -1,0 +1,35 @@
+<!-- Wrapper -->
+<div id="wrapper">
+
+<!-- Header -->
+<header id="header"{% if page.layout == "landing" %} class="alt style2"{% endif %}{% if page.layout == "home" %} class="alt"{% endif %}>
+	<a href="{{ "" | absolute_url }}/" class="logo">
+		<img src="{{ site.baseurl }}/assets/images/logos/ButterflyLogoColorbar.svg" alt="{{ site.title }}">
+	</a>
+	<nav>
+		<a href="#menu">Menu</a>
+	</nav>
+</header>
+
+<!-- Menu -->
+<nav id="menu">
+    <div class="inner">
+        <!-- Add logo here -->
+        <img src="{{ 'assets/images/logos/ButterflyLogoStacked_tan.png' | absolute_url }}" alt="Company Logo" class="menu-logo" />
+
+        <ul class="links">
+            {% for page in site.pages %}
+                {% if page.layout == "home" %}
+                    <li><a href="{{ "" | absolute_url }}/">{{ page.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+            {% for page in site.html_pages %}
+                {% if page.layout != "home" and page.nav-menu == true %}
+                    <li><a href="{{ page.url | absolute_url }}">{{ page.title }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+    <a class="close" href="#">Close</a>
+</nav>
+</div>

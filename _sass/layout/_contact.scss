@@ -1,0 +1,72 @@
+///
+/// Forty by HTML5 UP
+/// html5up.net | @ajlkn
+/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+///
+
+/* Contact */
+
+	#contact {
+		border-bottom: solid 1px _palette(border);
+		overflow-x: hidden;
+		padding: 0 10em;
+
+		> .inner {
+			@include vendor('display', 'flex');
+			padding: 0 !important;
+
+			> :nth-child(2n - 1) {
+				@include padding(4em, 0, (0, 3em, 0, 0));
+				border-right: solid 1px _palette(border);
+				width: 60%;
+				z-index: 1;
+			}
+
+			> :nth-child(2n) {
+				padding-left: 3em;
+				width: 40%;
+			}
+
+			> .split {
+				display: flex;
+				justify-content: space-between;
+				width: 100%;
+				padding: 0;
+
+				> * {
+					width: 48%;  // Add this to give some space between items
+					@include padding(3em, 0, (0, 0, 0, 0));  // Modified padding
+					position: relative;
+
+					&:before {
+						display: none;  // Remove the border line between items
+					}
+				}
+
+				> :first-child {
+					&:before {
+						display: none;
+					}
+				}
+			}
+		}
+
+		@include breakpoint(medium) {
+            > .split {
+                flex-direction: column;  // Stack vertically on medium screens
+
+                > * {
+                    width: 100%;
+                    padding: 2em 0;
+                }
+            }
+		}
+
+		@include breakpoint(small) {
+			> .inner {
+				> :nth-child(2n - 1) {
+					@include padding(3em, 0, (0, 0, 0, 0));
+				}
+			}
+		}
+	}
