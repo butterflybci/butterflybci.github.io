@@ -4,7 +4,7 @@ subtitle: A BCI software company
 email: info@butterflybci.com
 description: Accelerating the impact and immersion of brain-computer interfaces
 baseurl: "" # the subpath of your site, e.g. /blog
-url: butterflybci.com
+url: "https://butterflybci.com"
 author: Butterfly Cognitive Interactions, Inc.
 country: United States of America
 
