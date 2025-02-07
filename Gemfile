@@ -1,2 +1,5 @@
 source 'https://rubygems.org'
-gem "github-pages"
+
+ruby '~> 3.2.0'
+gem 'github-pages'
+gem 'webrick'
