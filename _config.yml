@@ -27,5 +27,10 @@ sass:
   style: compressed
 
 exclude:
-- "*.gemspec"
-- LICENSE.md
+  - vendor
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - README.md
+  - LICENSE.md
+  - CHANGELOG.md
