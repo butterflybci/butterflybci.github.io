@@ -1,72 +1,134 @@
-///
-/// Forty by HTML5 UP
-/// html5up.net | @ajlkn
-/// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-///
+// _contact.scss
 
-/* Contact */
+#contact {
+    border-bottom: solid 1px _palette(border);
+    overflow-x: hidden;
+    padding: 0 10em;
 
-	#contact {
-		border-bottom: solid 1px _palette(border);
-		overflow-x: hidden;
-		padding: 0 10em;
+    > .inner {
+        @include vendor('display', 'flex');
+        padding: 0 !important;
 
-		> .inner {
-			@include vendor('display', 'flex');
-			padding: 0 !important;
+        > :nth-child(2n - 1) {
+            @include padding(4em, 0, (0, 3em, 0, 0));
+            border-right: solid 1px _palette(border);
+            width: 60%;
+            z-index: 1;
+        }
 
-			> :nth-child(2n - 1) {
-				@include padding(4em, 0, (0, 3em, 0, 0));
-				border-right: solid 1px _palette(border);
-				width: 60%;
-				z-index: 1;
-			}
+        > :nth-child(2n) {
+            padding-left: 3em;
+            width: 40%;
+        }
 
-			> :nth-child(2n) {
-				padding-left: 3em;
-				width: 40%;
-			}
+        > .split {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            padding: 0;
 
-			> .split {
-				display: flex;
-				justify-content: space-between;
-				width: 100%;
-				padding: 0;
+            > * {
+                width: 48%;
+                @include padding(3em, 0, (0, 0, 0, 0));
+                position: relative;
+            }
+        }
+    }
 
-				> * {
-					width: 48%;  // Add this to give some space between items
-					@include padding(3em, 0, (0, 0, 0, 0));  // Modified padding
-					position: relative;
+    @include breakpoint(medium) {
+        padding: 0 4em;
 
-					&:before {
-						display: none;  // Remove the border line between items
-					}
-				}
+        > .inner {
+            flex-direction: column;
 
-				> :first-child {
-					&:before {
-						display: none;
-					}
-				}
-			}
-		}
+            > :nth-child(2n - 1) {
+                border-right: 0;
+                width: 100%;
+                padding-right: 0;
+            }
 
-		@include breakpoint(medium) {
+            > :nth-child(2n) {
+                width: 100%;
+                padding-left: 0;
+            }
+
             > .split {
-                flex-direction: column;  // Stack vertically on medium screens
+                flex-direction: column;
 
                 > * {
                     width: 100%;
                     padding: 2em 0;
+
+                    &:first-child {
+                        padding-top: 0;
+                    }
+
+                    &:last-child {
+                        padding-bottom: 0;
+                    }
                 }
             }
-		}
+        }
+    }
 
-		@include breakpoint(small) {
-			> .inner {
-				> :nth-child(2n - 1) {
-					@include padding(3em, 0, (0, 0, 0, 0));
-				}
-			}
-		}
-	}
+    @include breakpoint(small) {
+        padding: 0 2em;
+
+        > .inner {
+            > :nth-child(2n - 1) {
+                @include padding(3em, 0, (0, 0, 0, 0));
+            }
+        }
+    }
+
+    @include breakpoint(xsmall) {
+        padding: 0 1em;
+
+        .contact-method {
+            text-align: left;
+            width: 100%;
+
+            h3 {
+                margin-bottom: 0.5em;
+            }
+        }
+    }
+}
+
+    @include breakpoint(small) {
+        padding: 0 2em;
+    }
+
+    @include breakpoint(xsmall) {
+        padding: 0 1em;
+
+        .contact-method {
+            padding-left: 2.5em;
+
+            .icon {
+                font-size: 1.5em;
+            }
+        }
+    }
+
+    .copyright {
+        font-size: 0.8em;
+        list-style: none;
+        padding-left: 0;
+        text-align: center;
+
+        li {
+            border-left: solid 1px _palette(border);
+            color: _palette(fg-light);
+            display: inline-block;
+            line-height: 1;
+            margin-left: 1em;
+            padding-left: 1em;
+
+            &:first-child {
+                border-left: 0;
+                margin-left: 0;
+                padding-left: 0;
+            }
+        }
+    }
